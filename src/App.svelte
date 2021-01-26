@@ -1,22 +1,20 @@
 <script>
 	import { onDestroy } from "svelte";
 
-	const date = new Date()
-
 	let time;
 	let error;
 
 	const interval = setInterval(() => {
-		fetch("/api/time?minutes_offset=" + date.getTimezoneOffset(), {method: "POST"})
-			.then((response) => response.json())
-			.then((body) => {
-				time = body.time;
-				error = undefined;
-			})
-			.catch((err) => {
-				time = undefined;
-				error = err;
-			});
+		const date = new Date();
+
+		let hours = date.getHours().toString();
+		hours = hours.length > 1 ? hours : 0 + hours;
+		let mins = date.getMinutes().toString();
+		mins = mins.length > 1 ? mins : 0 + mins;
+		let secs = date.getSeconds().toString();
+		secs = secs.length > 1 ? secs : 0 + secs;
+
+		time = `${hours}:${mins}:${secs}`;
 	}, 1000);
 
 	onDestroy(() => {

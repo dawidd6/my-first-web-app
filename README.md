@@ -1,6 +1,6 @@
 # my-first-web-app
 
-Build with Go and Svelte.
+Build with Svelte.
 
 ## Development
 
@@ -10,10 +10,4 @@ Run this line in one terminal:
 cd frontend && npm install && npm dev
 ```
 
-and this in a separate one:
-
-```sh
-cd backend && go run main.go
-```
-
-Go to `http://localhost:8080`.
+Go to `http://localhost:5000`.

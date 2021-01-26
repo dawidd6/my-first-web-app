@@ -2,7 +2,7 @@
   "name": "my-first-web-app",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "dev": "rollup -c -w --watch.buildDelay=5",
     "start": "sirv public"
   },
   "devDependencies": {
