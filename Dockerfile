@@ -1,11 +1,18 @@
-FROM golang:1-alpine as builder
-COPY . /app
-WORKDIR /app
-RUN apk -U add make
-RUN make
+FROM golang:1-alpine as backend-builder
+COPY ./backend /backend
+WORKDIR /backend
+ENV CGO_ENABLED=0
+RUN go build -o app
+
+FROM node:14-alpine as frontend-builder
+COPY ./frontend /frontend
+WORKDIR /frontend
+RUN npm install
+RUN npm run build
 
 FROM alpine:3 as runner
-COPY --from=builder /app /app
-WORKDIR /app
+COPY --from=backend-builder /backend/app /bin/app
+COPY --from=frontend-builder /frontend/public /frontend
 EXPOSE 8080
-ENTRYPOINT ["/app/my-first-web-app"]
+ENV PREFIX=/frontend
+ENTRYPOINT ["app"]
