@@ -1,11 +1,13 @@
 <script>
 	import { onDestroy } from "svelte";
 
+	const date = new Date()
+
 	let time;
 	let error;
 
 	const interval = setInterval(() => {
-		fetch("/api/time")
+		fetch("/api/time?minutes_offset=" + date.getTimezoneOffset(), {method: "POST"})
 			.then((response) => response.json())
 			.then((body) => {
 				time = body.time;
