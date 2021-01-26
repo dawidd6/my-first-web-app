@@ -18,9 +18,9 @@
 
 	.left {
 		font-weight: bold;
-		font-size: large;
+		font-size:x-large;
 		text-align: left;
-		padding-left: 4em;
+		padding-left: 2em;
 		color: #e6fcfd;
 	}
 </style>

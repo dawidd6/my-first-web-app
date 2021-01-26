@@ -20,6 +20,6 @@
 	}
 	p {
 		color: #e6fcfd;
-		justify-self: center;
+		font-size: large;
 	}
 </style>
