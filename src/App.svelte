@@ -1,8 +1,9 @@
 <script>
 	import { onDestroy } from "svelte";
+	import Footer from "./Footer.svelte";
+	import Navbar from "./Navbar.svelte";
 
 	let time;
-	let error;
 
 	const interval = setInterval(() => {
 		const date = new Date();
@@ -26,37 +27,33 @@
 	<title>Timer</title>
 </svelte:head>
 
+<Navbar />
 <main>
 	<h1 class="header">The time is</h1>
 	<p class="time">{time ? time : "..."}</p>
-	{#if error}
-		<p class="error">{error}</p>
-	{/if}
 </main>
+<Footer />
 
 <style>
 	main {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		text-align: center;
-		padding: 1em;
-		margin: 0 auto;
+		min-width: 80%;
 	}
 
 	.header {
-		color: #3eb317;
+		color: #0f5a5f;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: lighter;
 	}
 
 	.time {
-		color: #0366fc;
+		color: #1e7e85;
 		font-size: 3em;
 		font-weight: normal;
-	}
-
-	.error {
-		color: #fc0349;
-		font-size: 1em;
-		font-style: italic;
 	}
 </style>
