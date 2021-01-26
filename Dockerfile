@@ -14,5 +14,5 @@ FROM alpine:3 as runner
 COPY --from=backend-builder /backend/app /bin/app
 COPY --from=frontend-builder /frontend/public /frontend
 EXPOSE 8080
-ENV PREFIX=/frontend
+ENV STATIC=/frontend
 ENTRYPOINT ["app"]
