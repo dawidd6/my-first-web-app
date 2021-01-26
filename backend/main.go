@@ -11,7 +11,7 @@ import (
 func main() {
 	static := os.Getenv("STATIC")
 	if static == "" {
-		static = "../public"
+		static = "../frontend/public"
 	}
 
 	e := echo.New()
