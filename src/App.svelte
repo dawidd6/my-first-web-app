@@ -41,7 +41,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
-		min-width: 80%;
+		min-width: 100%;
 	}
 
 	.header {
