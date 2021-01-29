@@ -27,12 +27,10 @@
 	<title>Timer</title>
 </svelte:head>
 
-<Navbar />
 <main>
 	<h1 class="header">The time is</h1>
 	<p class="time">{time ? time : "..."}</p>
 </main>
-<Footer />
 
 <style>
 	main {
