@@ -33,6 +33,10 @@
 </main>
 
 <style>
+        body {
+                background-color: #e6fcfd;
+        }
+
 	main {
 		position: absolute;
 		top: 50%;
