@@ -33,11 +33,6 @@
 </main>
 
 <style>
-        * {
-                background-color: #e6fcfd;
-	        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-        }
-
 	main {
 		position: absolute;
 		top: 50%;
