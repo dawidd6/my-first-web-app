@@ -60,7 +60,7 @@
 </svelte:head>
 
 <Navbar bind:location on:click={onSubmit} on:keydown={onKeyDown} />
-<main class="w3-container w3-center w3-display-middle">
+<main class="w3-container w3-center w3-display-middle" style="width: 100%">
 	{#if current}
 		<div class="w3-container" style="display: flex">
 			<img alt="Icon" src={current.icon} />
