@@ -4,10 +4,13 @@
 	import Navbar from "./Navbar.svelte";
 
 	let error;
+	/*
 	let current = {
 		temp: "11",
 		icon: "favicon.png",
 	};
+	*/
+	let current;
 	let location;
 
 	const fetchWeather = () => {
@@ -67,9 +70,10 @@
 		<p class="w3-text">
 			{`${current.city}, ${current.country}`}
 		</p>
-	{/if}
-	{#if error}
+	{:else if error}
 		<p class="w3-text">{error.message}</p>
+	{:else}
+		<h2>Enter location and submit it!</h2>
 	{/if}
 </main>
 <Footer />
