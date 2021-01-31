@@ -1,26 +1,15 @@
 <script>
+	export let location;
 </script>
 
-<nav>
-	<p class="left">Timer</p>
+<nav class="w3-bar w3-black w3-card-4 w3-center">
+	<input
+		class="w3-input w3-border w3-round w3-bar-item w3-margin"
+		type="text"
+		bind:value={location}
+		on:keydown
+	/>
+	<button on:click class="w3-button w3-round w3-teal w3-bar-item w3-margin-top w3-margin-bottom"
+		>Submit</button
+	>
 </nav>
-
-<style>
-	nav {
-		text-align: center;
-		position: fixed;
-		top: 0;
-		left: 0;
-		background-color: #0e919b;
-		width: 100%;
-		text-align: center;
-	}
-
-	.left {
-		font-weight: bold;
-		font-size: x-large;
-		text-align: left;
-		padding-left: 30px;
-		color: #e6fcfd;
-	}
-</style>

@@ -1,25 +1,11 @@
 <script>
 </script>
 
-<footer>
-	<p>Coded with &#10084;&#65039;</p>
+<footer class="w3-container w3-black w3-center w3-card-4 footer">
+	<p>Coded with <i class="w3-text-red w3-large fa fa-heart" /></p>
+	<p>
+		Powered by <a href="https://www.weatherapi.com" title="Free Weather API"
+			>WeatherAPI.com</a
+		>
+	</p>
 </footer>
-
-<style>
-	footer {
-		display: flex;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		background-color: #349197;
-		width: 100%;
-		min-height: 5em;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-	}
-	p {
-		color: #e6fcfd;
-		font-size: large;
-	}
-</style>
