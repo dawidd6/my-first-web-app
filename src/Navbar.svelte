@@ -6,6 +6,7 @@
 	<input
 		class="w3-input w3-border w3-round w3-bar-item w3-margin"
 		type="text"
+		placeholder="Enter location"
 		bind:value={location}
 		on:keydown
 	/>
