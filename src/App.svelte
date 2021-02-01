@@ -3,14 +3,16 @@
 	import API from "./api.js";
 	import Navbar from "./Navbar.svelte";
 
-	let error;
-	/*
 	let current = {
 		temp: "11",
 		icon: "favicon.png",
+		city: "Warsaw",
+		condition: "Cloudy",
+		cloud: "50",
+		humidity: "60",
 	};
-	*/
-	let current;
+
+	let error;
 	let location;
 
 	const fetchWeather = () => {
@@ -34,6 +36,8 @@
 					temp: json.current.temp_c,
 					icon: json.current.condition.icon,
 					condition: json.current.condition.text,
+					cloud: json.current.cloud,
+					humidity: json.current.humidity,
 				};
 				error = undefined;
 			})
@@ -60,20 +64,105 @@
 </svelte:head>
 
 <Navbar bind:location on:click={onSubmit} on:keydown={onKeyDown} />
-<main class="w3-container w3-center w3-display-middle" style="width: 100%">
+<main>
 	{#if current}
-		<div class="w3-container" style="display: flex">
-			<img alt="Icon" src={current.icon} />
-			<h1 class="temp">{current.temp}</h1>
-			<p class="grade">&#8451;</p>
+		<div class="current">
+			<div class="cloud-humidity">
+				<i class="cloud-icon fa fa-cloud" />
+				<p class="cloud-value">{current.cloud}%</p>
+				<i class="humidity-icon fa fa-tint" />
+				<p class="humidity-value">{current.humidity}%</p>
+			</div>
+			<div class="temp-grade">
+				<p class="temp-value">{current.temp}</p>
+				<sup class="grade-icon">&#8451;</sup>
+			</div>
+			<p class="city">{`${current.city}, ${current.country}`}</p>
+			<p class="condition">{current.condition}</p>
+			<img
+				class="image"
+				src={current.icon}
+				alt="Icon"
+				width="64"
+				height="64"
+			/>
 		</div>
-		<p class="w3-text">
-			{`${current.city}, ${current.country}`}
-		</p>
 	{:else if error}
-		<p class="w3-text">{error.message}</p>
+		<p class="error">{error.message}</p>
 	{:else}
-		<h2>Enter location and submit it!</h2>
+		<p class="greeting">Enter location and submit it!</p>
 	{/if}
 </main>
 <Footer />
+
+<style>
+	main {
+		margin-top: 10%;
+		margin-bottom: 20%;
+		color: black;
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #dee0e4;
+	}
+	.current {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.cloud-humidity {
+		display: flex;
+		height: 4em;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+	}
+	.cloud-icon {
+		margin-right: 10px;
+	}
+	.cloud-value {
+		margin-right: 20px;
+	}
+	.humidity-icon {
+		margin-left: 20px;
+	}
+	.humidity-value {
+		margin-left: 10px;
+	}
+	.temp-grade {
+		display: flex;
+		height: 4em;
+		margin-bottom: 5px;
+	}
+	.temp-value {
+		font-size: 4em;
+		align-self: center;
+	}
+	.grade-icon {
+		font-size: 2em;
+	}
+	.city {
+		font-size: 1em;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.condition {
+		font-size: 1em;
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
+	.greeting {
+		color: #7f899b;
+		font-weight: bold;
+		font-size: x-large;
+	}
+	.error {
+		color: rgb(230, 78, 78);
+		font-style: italic;
+		font-weight: bold;
+		font-size: large;
+	}
+</style>
