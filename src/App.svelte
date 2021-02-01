@@ -104,6 +104,7 @@
 		margin-bottom: 20%;
 		color: black;
 		color: #dee0e4;
+                top: 30%;
                 width: 100%;
 		display: flex;
 		height: 100%;
