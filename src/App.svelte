@@ -106,7 +106,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-                height: 80vh;
+                height: 50vh;
                 width: 100vw;
 	}
 	.current {
