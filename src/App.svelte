@@ -100,14 +100,11 @@
 
 <style>
 	main {
-		margin-top: 10%;
+		margin-top: 20%;
 		margin-bottom: 20%;
 		color: #dee0e4;
 		display: flex;
-		align-items: center;
 		justify-content: center;
-                height: 50vh;
-                width: 100vw;
 	}
 	.current {
 		display: flex;
