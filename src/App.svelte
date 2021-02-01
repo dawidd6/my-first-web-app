@@ -102,9 +102,8 @@
 	main {
 		margin-top: 10%;
 		margin-bottom: 20%;
-		color: black;
 		color: #dee0e4;
-                top: 30%;
+                top: 50%;
                 width: 100%;
 		display: flex;
 		height: 100%;
