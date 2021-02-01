@@ -3,6 +3,7 @@
 	import API from "./api.js";
 	import Navbar from "./Navbar.svelte";
 
+	/*
 	let current = {
 		temp: "11",
 		icon: "favicon.png",
@@ -11,12 +12,14 @@
 		cloud: "50",
 		humidity: "60",
 	};
+	*/
 
+	let current;
 	let error;
 	let location;
 
 	const fetchWeather = () => {
-		const language = navigator.language;
+		const language = navigator.language.split("-")[0];
 		const api = new API(location, language);
 		api.getCurrent()
 			.then((res) => res.json())
@@ -78,9 +81,9 @@
 				<sup class="grade-icon">&#8451;</sup>
 			</div>
 			<p class="city">{`${current.city}, ${current.country}`}</p>
-			<p class="condition">{current.condition}</p>
+			<p class="condition-text">{current.condition}</p>
 			<img
-				class="image"
+				class="condition-icon"
 				src={current.icon}
 				alt="Icon"
 				width="64"
@@ -121,15 +124,19 @@
 	}
 	.cloud-icon {
 		margin-right: 10px;
+		text-shadow: 1px 2px 3px black;
 	}
 	.cloud-value {
 		margin-right: 20px;
+		text-shadow: 1px 2px 3px black;
 	}
 	.humidity-icon {
 		margin-left: 20px;
+		text-shadow: 1px 2px 3px black;
 	}
 	.humidity-value {
 		margin-left: 10px;
+		text-shadow: 1px 2px 3px black;
 	}
 	.temp-grade {
 		display: flex;
@@ -138,26 +145,33 @@
 	}
 	.temp-value {
 		font-size: 4em;
+		text-shadow: 1px 2px 3px black;
 		align-self: center;
 	}
 	.grade-icon {
 		font-size: 2em;
+		text-shadow: 1px 2px 3px black;
 	}
 	.city {
 		font-size: 1em;
 		font-weight: bold;
 		margin-top: 10px;
 		margin-bottom: 10px;
+		text-shadow: 1px 2px 3px black;
 	}
-	.condition {
+	.condition-text {
 		font-size: 1em;
 		margin-top: 0px;
 		margin-bottom: 5px;
+		text-shadow: 1px 2px 3px black;
+	}
+	.condition-icon {
 	}
 	.greeting {
 		color: #7f899b;
 		font-weight: bold;
 		font-size: x-large;
+		text-shadow: 1px 1px 2px black;
 	}
 	.error {
 		color: rgb(230, 78, 78);
