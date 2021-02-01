@@ -103,12 +103,12 @@
 		margin-top: 10%;
 		margin-bottom: 20%;
 		color: black;
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		color: #dee0e4;
                 width: 100%;
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
 	}
 	.current {
 		display: flex;
