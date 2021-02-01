@@ -108,6 +108,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: #dee0e4;
+                width: 100%;
 	}
 	.current {
 		display: flex;
